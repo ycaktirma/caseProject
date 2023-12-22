@@ -4,7 +4,7 @@ This is a case project.
 # Description
 Web application using React for the frontend and Django for the backend, following a microservices architecture. Each microservice, such as customerservice, productservice, reportsservice, is contained within separate Docker containers, and a common PostgreSQL database is shared among them. The application can be managed using Docker Desktop.
 
-For the full implementation of the microservices architecture, the database for each service can be separated in the future.
+For the full implementation of the microservices architecture, the database for each service can be separated in the future. This is just a prototype of microservice architecture.
 
 The project is currently in a prototype stage and may have areas that need further development.
 
@@ -49,6 +49,19 @@ The project is currently in a prototype stage and may have areas that need furth
     ```
         http://localhost:8002/reports
     ```
+    Pgadmin4 for managing databases 
+    ```
+        http://localhost:5050
+
+        email: ycaktirma@example.com
+        password : 123qwe.*
+    ```
+    Server configuration for pgadmin:
+     - Right click on Servers -> Register -> Server
+     Go to the connection tab and provide these:
+     Host : db
+     Username : caseproject_user
+     Password : 123qwe.*
 
 
 # Images
