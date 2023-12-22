@@ -1,0 +1,10 @@
+.home{
+    min-height: 90vh;
+}
+.customCard{
+    margin: 10px;
+}
+.customCard img{
+    height: 140px;
+    padding: 10px;
+}

@@ -1,0 +1,16 @@
+.header{
+    height: 5vh;
+    width: 100%;
+
+    background-color: #134A9F;
+    color: #F2F2F2;
+    
+}
+
+.header-title{
+    line-height: 3vh;
+    padding: 0;
+    margin:0;
+    padding-top:1vh;
+    padding-left: 2vw;
+}
