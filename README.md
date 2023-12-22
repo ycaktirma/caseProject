@@ -28,7 +28,6 @@ The project is currently in a prototype stage and may have areas that need furth
         docker exec -it customersservice_c python caseProjectServices/manage.py migrate
         docker exec -it reportsService_c python caseProjectServices/manage.py migrate
     ```
-4) docker-compose up --build
 
 
 # Images
