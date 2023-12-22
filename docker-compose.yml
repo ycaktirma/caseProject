@@ -1,0 +1,75 @@
+version: "3.8"
+services:
+  frontendreact:
+    build: ./case-project
+    container_name: case-project_c
+    ports: 
+    - '3000:3000'
+    stdin_open: true
+    tty: true
+    
+  customers_service:
+    build:
+      context: .
+      dockerfile: ./caseProjectServices/customersService/Dockerfile
+    container_name: customersservice_c
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+  products_service:
+    build:
+      context: .
+      dockerfile: ./caseProjectServices/productService/Dockerfile
+    container_name: productService_c
+    ports:
+      - 8001:8001
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+  reports_service:
+    build:
+      context: .
+      dockerfile: ./caseProjectServices/reportsService/Dockerfile
+    container_name: reportsService_c
+    ports:
+      - 8002:8002
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+      
+  db:
+    image: postgres:15
+    container_name: db
+    
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=caseproject_db
+      - POSTGRES_USER=caseproject_user
+      - POSTGRES_PASSWORD=123qwe.*
+
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgAdmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ycaktirma@example.com
+      PGADMIN_DEFAULT_PASSWORD: 123qwe.*
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+      
+volumes:
+  postgres_data:
+
