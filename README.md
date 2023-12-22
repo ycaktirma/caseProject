@@ -18,15 +18,36 @@ The project is currently in a prototype stage and may have areas that need furth
     ```
         git clone https://github.com/ycaktirma/caseProject.git
     ```
- 2) Inside the root folder, run;
+ 2) Change directory to project
+    ```
+        cd caseproject
+    ```
+ 3) Inside the project root folder, run;
     ```
         docker-compose up --build
     ```
- 3) Run migrations
+ 4) Run migrations
     ```
         docker exec -it productService_c python caseProjectServices/manage.py migrate
         docker exec -it customersservice_c python caseProjectServices/manage.py migrate
         docker exec -it reportsService_c python caseProjectServices/manage.py migrate
+    ```
+ 5) Access:
+    React App : 
+    ```
+        http://localhost:3000    
+    ```
+    Customers Service: 
+    ```
+        http://localhost:8000/customer    
+    ```
+    Product Service: 
+    ```
+        http://localhost:8001/product
+    ```
+    Report Service: 
+    ```
+        http://localhost:8002/reports
     ```
 
 
